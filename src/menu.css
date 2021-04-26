@@ -1,0 +1,135 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+    letter-spacing: 1px;
+}
+
+html, body{
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    font-size: 17px;
+}
+
+.menu-bar {
+    display: flex;
+    background-color: #3ab998;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 3.125rem;
+    width: 100%;
+    position: fixed;
+}
+
+.menu-bar a, .menu-bar a:hover, .menu-bar a:visited, .menu-bar a:active{
+    color: #fff;
+    text-decoration: none;
+    background-color: inherit;
+}
+
+.menu-holder {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    list-style: none;
+}
+
+.menu-bar .brand {
+    font-size: 1.1rem;
+    flex: auto 0 0;
+    margin-right: auto;
+}
+
+.menu-holder a {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+    display: block;
+}
+
+.menu-holder a:hover {
+    background-color: #34a386;
+}
+
+.menu-bar .collapse {
+    display: none;
+    border: none;
+    background-color: inherit;
+    padding: 0;
+    order: 1;
+    line-height: 1;
+}
+
+.menu-bar .collapse::after{
+    content: "menu";
+    font-family: "Material Icons";
+    font-size: 2rem;
+    color: #fff;
+}
+
+.menu-holder a::before {
+    content: attr(d-icon);
+    font-family: "Material Icons";
+    line-height: 1;
+    vertical-align: middle;
+    font-size: 1.5em;
+    margin-right: 0.25em;
+}
+/*=====================Search box starts=============================*/
+.menu-bar .search{
+    background-color: #fff;
+    padding: 0.5rem;
+    display: flex;
+    color: #737373;
+    margin: 0 0.5rem;
+}
+
+.menu-bar .search input{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0;
+    background-color: inherit;
+    color: inherit;
+}
+
+.menu-bar .search::after{
+    content: "search";
+    font-family: 'Material Icons';
+}
+/*=====================Search box ends=============================*/
+
+@media screen and (max-width: 800px) {
+    .menu-holder{
+        flex-direction: column;
+        background-color: #206f5a;
+        position: absolute;
+        top: 100%;
+        right: -101%;
+        width: 75%;
+        padding: 0.5rem;
+        height: calc(100vh - 3.125rem);
+        box-shadow: -3px 3px 7px 1px rgb(11 11 11 / 50%);
+        opacity: 0;
+        transition: right 0.3s ease-in, opacity 0.3s ease-in;
+    }
+
+    .menu-holder.show{
+        right: 0;
+        opacity: 1;
+    }
+
+    .menu-holder a{
+        font-size: 1rem;
+        padding: 1rem 1.25rem;
+    }
+
+    .menu-bar .collapse {
+        display: block;
+    }
+
+    .menu-bar .close::after{
+        content: "close";
+    }
+}

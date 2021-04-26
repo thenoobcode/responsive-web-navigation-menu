@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Navigation Menu</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./menu.css">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="menu-bar">
+            <a href="#" class="brand">The Noob Code</a>
+            <!--The Search box html starts-->
+            <div class="search">
+                <input type="text" placeholder="Search">
+            </div>
+            <!--The Search box html ends-->
+            <button type="button" class="collapse" onclick="toggleMenuCollapse(event)"></button>
+            <ul class="menu-holder">
+                <li><a href="#" d-icon="home">Home</a></li>
+                <li><a href="#" d-icon="inventory_2">Products</a></li>
+                <li><a href="#" d-icon="phone_in_talk">Contact</a></li>
+                <li><a href="#" d-icon="info">About</a></li>
+                <li><a href="#" d-icon="person">Login</a></li>
+            </ul>
+        </nav>
+        <script type="text/javascript" src="./script.js"></script>
+    </body>
+</html>
